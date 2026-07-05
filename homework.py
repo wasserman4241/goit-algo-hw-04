@@ -10,7 +10,7 @@ def total_salary(path: str) -> tuple[float, float]:
     count = 0
 
     try:
-        # Використовуємо менеджер контексту with та вказуємо кодування utf-8
+        
         with open(path, 'r', encoding='utf-8') as file:
             for line_num, line in enumerate(file, 1):
                 line = line.strip()
@@ -30,7 +30,7 @@ def total_salary(path: str) -> tuple[float, float]:
                     count += 1
                 except ValueError:
                     print(f"Warning: Invalid salary value on line {line_num}: '{salary_str}'.")
-                    return 0.0, 0.0  # Файл пошкоджений
+                    return 0.0, 0.0  
 
         if count == 0:
             print("Warning: The file contains no valid salary data.")
